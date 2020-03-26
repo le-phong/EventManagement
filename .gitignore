@@ -1,0 +1,19 @@
+# Node modules
+node_modules
+package-lock.json
+
+logs
+
+# Config file
+config/dev.json
+
+# Adonis directory for storing tmp files
+tmp
+
+# Environment variables, never commit this file
+.env
+
+# VSCode & Webstorm history directories
+.history
+.idea
+public/api-doc
