@@ -12,7 +12,8 @@ const authenticate = async ({ email, password }, lang) => {
     if (password !== user.password) {
       throw Error(localesUtil.commonMessage(lang).PASSWORD_INCORRECT);
     }
-    return _.omit(user, ['password']);
+    user.id = user._id;
+    return _.omit(user, ['_id', 'password']);
   } else {
     throw Error(localesUtil.commonMessage(lang).EMAIL_IS_NOT_EXIST);
   }
@@ -32,7 +33,7 @@ const generateToken = (user, expireTime) => {
   return jwt.sign(payload, config.jwt.key);
 };
 
-const verifyToken = async (token, lang) => {
+const verifyToken = (token, lang) => {
   const decodedToken = jwt.decode(token);
   if (!decodedToken || decodedToken.exp < moment().unix()) {
     throw new Error(localesUtil.commonMessage(lang).INVALID_TOKEN);

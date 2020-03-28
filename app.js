@@ -37,7 +37,13 @@ i18n.configure({
 // Connect to Mongoose and set connection variable
 const mongoConfig = config.get('mongodb');
 mongoose.connect(`mongodb://${mongoConfig.host}:${mongoConfig.port}/${mongoConfig.database}`,
-  { user: mongoConfig.user, pass: mongoConfig.pass, useNewUrlParser: true, useUnifiedTopology: true });
+  {
+    user: mongoConfig.user,
+    pass: mongoConfig.pass,
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false
+  });
 const db = mongoose.connection;
 
 // Added check for DB connection

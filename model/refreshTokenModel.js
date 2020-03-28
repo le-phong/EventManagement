@@ -8,7 +8,7 @@ const save = (data) => {
     refreshToken.save({ upsert: true }, (err, data) => {
       if (err) {
         logger.error(`[RefreshTokenModel.save] Create data error { err: ${err}, data: ${data} }`);
-        return reject(err);
+        return reject(Error('Invalid'));
       }
       return resolve(data);
     });

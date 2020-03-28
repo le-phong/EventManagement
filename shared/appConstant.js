@@ -5,8 +5,8 @@ module.exports = Object.freeze({
     DEFAULT_LANGUAGE: 'en'
   },
   JWT: {
-    ACCESS_TOKEN_LIFETIME: 60,
-    REFRESH_TOKEN_LIFETIME: 60 * 2
+    ACCESS_TOKEN_LIFETIME: 60 * 60 * 12,
+    REFRESH_TOKEN_LIFETIME: 60 * 60 * 24 * 30
   },
   EVENT: {
     PAGINATION: 10,

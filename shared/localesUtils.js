@@ -1,6 +1,6 @@
 const i18n = require('i18n');
 
-const supportLanguage = ['en', 'vi'];
+const supportLanguage = ['en'];
 const ENGLISH = 'en';
 
 function commonMessage(lang = ENGLISH) {

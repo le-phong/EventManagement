@@ -3,6 +3,22 @@
         "EMAIL_IS_EXIST": "Email is exist",
         "EMAIL_IS_NOT_EXIST": "Email is not exist",
         "PASSWORD_INCORRECT": "Password incorrect",
-        "INVALID_TOKEN": "Access token invalid"
+        "INVALID_TOKEN": "Access token invalid",
+        "EVENT": {
+            "DUE_DATE_BEFORE_START_DATE": "The due date is before the start date",
+            "EVENT_IS_NOT_EXIST": "Event is not exist",
+            "DELETE_SUCCESS": "Delete event success",
+            "DELETE_FAILED": "Delete event failed"
+        }
+    },
+    "VALIDATE": {
+        "ID_INVALID": "Id invalid",
+        "EVENT_NAME_INVALID": "Event name invalid",
+        "EVENT_DESCRIPTION_INVALID": "Event description invalid",
+        "START_DATE_INVALID": "Start date invalid",
+        "DUE_DATE_INVALID": "Due date invalid",
+        "USERNAME_INVALID": "Username invalid",
+        "EMAIL_INVALID": "Email invalid",
+        "PASSWORD_INVALID": "Password invalid"
     }
 }

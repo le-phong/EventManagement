@@ -8,7 +8,7 @@ const create = (data) => {
     user.save(data, (err, data) => {
       if (err) {
         logger.error(`[UserModel.create] Create data error { err: ${err}, data: ${data} }`);
-        return reject(err);
+        return reject(Error('Invalid'));
       }
       logger.info(`[UserModel.create] Create data success fully User - { condition: ${JSON.stringify(data)}}`);
       return resolve(data.toJSON());
@@ -21,7 +21,7 @@ const getUser = ({ condition, select }) => {
     User.findOne(condition || {}, select || {}, function (err, data) {
       if (err) {
         logger.error(`[UserModel.getUser] getUser data error { err: ${err} }`);
-        return reject(err);
+        return reject(Error('Invalid'));
       }
       return resolve(data ? data.toJSON() : null);
     });

@@ -1,3 +1,4 @@
+const _ = require('lodash');
 const moment = require('moment');
 const md5 = require('md5');
 
@@ -12,7 +13,7 @@ const refreshTokenModel = require('../model/refreshTokenModel');
 /**
  * Function handle register user
  * @param {*} { email, username, password }
- * @returns {*} Object user
+ * @returns {*} Object user omit password
  */
 const register = async (data, lang) => {
   const { email, username, password } = data;
@@ -26,7 +27,7 @@ const register = async (data, lang) => {
     username,
     password: hashPassword
   });
-  return user;
+  return _.omit(user, ['password']);
 };
 
 /**
