@@ -20,7 +20,7 @@ const createEvent = (body, lang) => {
 const updateEvent = (body, lang) => {
   body = _.pick(body, ['id', 'name', 'description', 'startDate', 'dueDate']);
   const result = joi.object().keys({
-    id: joi.string().pattern(new RegExp('^[0-9a-fA-F]{24}$')).error(new Error('ID_INVALID')),
+    id: joi.string().pattern(new RegExp('^[0-9a-fA-F]{24}$')).required().error(new Error('ID_INVALID')),
     name: joi.string().min(1).max(1000).error(new Error('EVENT_NAME_INVALID')),
     description: joi.string().error(new Error('EVENT_DESCRIPTION_INVALID')),
     startDate: joi.string().pattern(new RegExp('^[1-2][0-9][0-9][0-9]-[0-1][0-9]-[0-3][0-9]T[0-2][0-9]:[0-5][0-9]:[0-5][0-9].[0-9][0-9][0-9]Z$')).error(new Error('START_DATE_INVALID')),
@@ -34,7 +34,7 @@ const updateEvent = (body, lang) => {
 
 const getEvent = (id, lang) => {
   const result = joi.object().keys({
-    id: joi.string().pattern(new RegExp('^[0-9a-fA-F]{24}$')).error(new Error('ID_INVALID'))
+    id: joi.string().pattern(new RegExp('^[0-9a-fA-F]{24}$')).required().error(new Error('ID_INVALID'))
   }).validate({ id });
   if (result.error) {
     throw Error(localesUtils.validateMessage(lang)[`${result.error.message}`]);
@@ -44,7 +44,7 @@ const getEvent = (id, lang) => {
   
 const removeEvent = (body, lang) => {
   const result = joi.object().keys({
-    id: joi.string().pattern(new RegExp('^[0-9a-fA-F]{24}$')).error(new Error('ID_INVALID'))
+    id: joi.string().pattern(new RegExp('^[0-9a-fA-F]{24}$')).required().error(new Error('ID_INVALID'))
   }).validate(body);
   if (result.error) {
     throw Error(localesUtils.validateMessage(lang)[`${result.error.message}`]);

@@ -25,7 +25,7 @@ module.exports = {
   },
   parserPreset: {
     parserOpts: {
-      issuePrefixes: ['SL-', 'KAN-', 'QBA-', 'QS-']
+      issuePrefixes: ['ISSUE-']
     }
   }
 };

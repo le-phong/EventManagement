@@ -7,7 +7,7 @@ const options = {
     level: 'info',
     name: 'file.info',
     // eslint-disable-next-line no-undef
-    filename: path.resolve(__dirname, '../..', 'logs', '%DATE%-event_management.log'),
+    filename: path.resolve(__dirname, '../', 'logs', '%DATE%-event_management.log'),
     handleExceptions: true,
     json: true,
     colorize: true,

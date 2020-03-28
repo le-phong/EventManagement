@@ -1,10 +1,10 @@
 {
     "whiteList": "*",
-    "port": 8088,
+    "port": 8080,
     "mongodb": {
         "host": "127.0.0.1",
         "port": "27017",
-        "database": "event_management",
+        "database": "event_management_test",
         "user": "",
         "pass": ""
     },
